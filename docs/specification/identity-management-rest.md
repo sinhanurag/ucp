@@ -276,6 +276,7 @@ All REST endpoints **MUST** be served over HTTPS with minimum TLS version 1.3.
 ## Status Codes
 
 Follows standard UCP status codes (see Core Specification).
+
 * `200 OK`: Successful request.
 * `201 Created`: Successful creation.
 * `401 Unauthorized`: Auth failed or missing.
