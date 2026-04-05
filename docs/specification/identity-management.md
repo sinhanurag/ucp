@@ -29,29 +29,31 @@ This capability builds upon the foundations laid in PR #330 for Identity Linking
 
 ## Features & Operations
 
-### 1. Identity Linking (`linkIdentity`)
+### 1. Identity Linking (`linkIdentity`) <a id="link-identity"></a>
 
 The `linkIdentity` operation preserves and enhances the functionality of the deprecated `dev.ucp.common.identity_linking` capability, incorporating improvements from PR #330:
-*   **Standard Flow**: OAuth 2.0 Authorization Code flow.
-*   **Delegated IdP**: Platforms can authenticate users via trusted third-party Identity Providers declared in `config.providers`.
-*   **Accelerated Flow (Identity Chaining)**: Uses token exchange (RFC 8693) and JWT bearer assertion (RFC 7523) to chain identity from Platform to Business without browser redirects.
+
+* **Standard Flow**: OAuth 2.0 Authorization Code flow.
+* **Delegated IdP**: Platforms can authenticate users via trusted third-party Identity Providers declared in `config.providers`.
+* **Accelerated Flow (Identity Chaining)**: Uses token exchange (RFC 8693) and JWT bearer assertion (RFC 7523) to chain identity from Platform to Business without browser redirects.
 
 ### 2. Identity Lifecycle Management (New)
 
 Platforms can manage the lifecycle of an identity once established or linked.
 
-*   **Create Identity**: `POST /identities` - Programmatically create a new identity.
-*   **Get Identity**: `GET /identities/{id}` - Retrieve profile details.
-*   **Update Identity**: `PUT /identities/{id}` - Update profile details.
-*   **Delete Identity**: `DELETE /identities/{id}` - Delete or deactivate an identity.
-*   **List Identities**: `GET /identities` - Search or list identities.
+* <a id="create-identity"></a>**Create Identity**: `POST /identities` - Programmatically create a new identity.
+* <a id="get-identity"></a>**Get Identity**: `GET /identities/{id}` - Retrieve profile details.
+* <a id="update-identity"></a>**Update Identity**: `PUT /identities/{id}` - Update profile details.
+* <a id="delete-identity"></a>**Delete Identity**: `DELETE /identities/{id}` - Delete or deactivate an identity.
+* <a id="list-identities"></a>**List Identities**: `GET /identities` - Search or list identities.
 
 ### 3. Identity Synchronization (Webhooks)
 
 Bi-directional synchronization of identity updates.
-*   **Event**: `identity.updated`
-*   **Payload**: Full `Identity` schema.
-*   **Config**: Platform provides `webhook_url` in the capability config.
+
+* **Event**: `identity.updated`
+* **Payload**: Full `Identity` schema.
+* **Config**: Platform provides `webhook_url` in the capability config.
 
 ## Scopes
 
@@ -66,9 +68,10 @@ In alignment with the capability-driven scope model in PR #330, scopes follow th
 ## Transport Bindings
 
 Detailed transport bindings are specified in separate documents:
-*   [REST Binding](identity-management-rest.md)
-*   [MCP Binding](identity-management-mcp.md)
+
+* [REST Binding](identity-management-rest.md)
+* [MCP Binding](identity-management-mcp.md)
 
 ## Schemas
 
-See [identity.json](../../source/schemas/common/types/identity.json) for the base user identity structure.
+See [identity.json](site:schemas/common/types/identity.json) for the base user identity structure.
